@@ -26,7 +26,7 @@ pdfmerge odd.pdf even.pdf
 
 If you have two or more PDFs and each contain only odd or even pages, you can use the second argument to zip merge them.
 The above command combines `odd.pdf` and `even.pdf` to produce a new combined file with interweaving odd & even pages.
-See `test` folder for these tw files (run `make test`):
+See `test` folder for these two files (run `make test`):
 
 | Page | `odd.pdf` | `even.pdf` |
 |:---:| --- | --- |
