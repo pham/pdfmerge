@@ -4,7 +4,7 @@ use strict;
 use PDF::API3::Compat::API2;
 
 use constant PRODUCT => 'pdfmerge';
-use constant VERSION => 'v1.0';
+use constant VERSION => 'v1.1';
 
 &make_book(@ARGV);
 
@@ -26,15 +26,15 @@ sub make_book {
                     $oe->{pdf}      = PDF::API3::Compat::API2->open($f);
                     $oe->{pages}    = $oe->{pdf}->pages;
                     $oe->{name}     = $f;
-                    printf "%s (%d)\n", $f, $oe->{pdf}->pages;
+                    printf "%s (%d pages)\n", $f, $oe->{pdf}->pages;
                 }
             }
  
             if ($oe->{pages}-- > 0) {
-                printf "%s: %d (%d)\n",
-                    $oe->{name},
+                printf " %5d/%-5d %s\n",
                     ++$oe->{current},
-                    $oe->{pages};
+                    $oe->{pages} + $oe->{current},
+                    $oe->{name};
                 $pdf->importpage($oe->{pdf}, $oe->{current});
                 $total++;
             } elsif ($oe->{pdf}) {
@@ -53,10 +53,10 @@ sub make_book {
     eval { $pdf->saveas($file) };
     if ($@) {
         unlink $file;
-        die "Cannot save $file: $!\n";
+        die "ERROR: Cannot save $file: $!\n";
     }
 
-    print "$file has $total pages\n";
+    print "$file ($total pages)\n";
 }
 
 1;
