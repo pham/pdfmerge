@@ -1,14 +1,14 @@
-#!C:\Program Files\ActiveState Perl Dev Kit 9.4\bin\perlapp-gui.exe
+#!C:\Program Files\ActiveState Perl Dev Kit 9.5.1\bin\perlapp-gui.exe
 PAP-Version: 1.0
-Packer: C:\Program Files\ActiveState Perl Dev Kit 9.4\bin\perlapp.exe
-Script: combine.pl
-Cwd: C:\code\pdf-combine
+Packer: C:\Program Files\ActiveState Perl Dev Kit 9.5.1\bin\perlapp.exe
+Script: pdfmerge.pl
+Cwd: D:\code\pdf-combine
 Clean: 0
-Date: 2017-09-25 13:51:56
+Date: 2019-10-29 19:55:48
 Debug: 
 Dependent: 0
 Dyndll: 0
-Exe: pdf-combine.exe
+Exe: pdfmerge.exe
 Force: 1
 Gui: 0
 Hostname: zebu
@@ -25,10 +25,10 @@ Version-CompanyName: Aquaron
 Version-FileDescription: 
 Version-FileVersion: 
 Version-InternalName: 
-Version-LegalCopyright: 2017 Aquaron
+Version-LegalCopyright: 2019 Aquaron
 Version-LegalTrademarks: 
 Version-OriginalFilename: 
-Version-ProductName: PDF Combine
+Version-ProductName: pdfmerge
 Version-ProductVersion: 1.0
 Warnings: 0
 Xclude: 0
